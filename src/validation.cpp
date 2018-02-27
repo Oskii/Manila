@@ -525,7 +525,7 @@ bool CheckTransaction(const CTransaction& tx, CValidationState &state, bool fChe
                 return state.DoS(100, false, REJECT_INVALID, "bad-txns-inputs-duplicate");
         }
     }
-
+    if ((int)chainActive.Height() < 2) { return true; }
     if (tx.IsCoinBase())
     {
         if (tx.vin[0].scriptSig.size() < 2 || tx.vin[0].scriptSig.size() > 100)

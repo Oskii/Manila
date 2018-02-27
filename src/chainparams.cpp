@@ -125,7 +125,7 @@ public:
         
         genesis = CreateGenesisBlock(GENESIS_TIME, 2318341486, GENESIS_DIFFICULTY, 1, 100 * COIN);
     	
-        //MineGenesisBlock(genesis);
+        MineGenesisBlock(genesis);
     	
     	consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x00007f4ec4c9e734a7f29cfabad0dd39b2f4aea43c67c251508676969409d250"));

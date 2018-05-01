@@ -6,9 +6,7 @@ https://Manilacoin.io
 What is Manila?
 ---------------------
 
-Manila is a cryptocurrency designed to help the animals
-
-Miners of Manila will generate a coins for a vegan charity fund which is used to help vegan initiatives
+Manila is a cryptocurrency for the Philippines
 
 License
 -------
@@ -19,7 +17,7 @@ information or see https://opensource.org/licenses/MIT.
 Credits
 -------
 
-Manila was forked from Bitcoin Core, more specifically from PlusOneCoin
+Manila was forked from Bitcoin Core, more specifically from Veggiecoin
 * [bitcoin](https://github.com/bitcoin/bitcoin)
 * [CryptoCoderz](https://github.com/CryptoCoderz/Espers.git) HMQ1725
 * [Manila](https://github.com/Oskii/Manila)

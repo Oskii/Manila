@@ -402,8 +402,8 @@ void MineGenesisBlock(CBlock &genesis)
 
 void SetDifficultyAdjustmentParams(int nHeight)
 {
-    if (nHeight >= 17500) {
-        int64_t modifiedPowTargetTimespan = 60 * 60 * 12; // 12 hours
+    if (nHeight >= 11207) {
+        int64_t modifiedPowTargetTimespan = 60 * 30; // 3 Blocks, 30 Minutes
         int64_t modifiedPowTargetSpacing = 10 * 60;   // 10 minute
 
         mainParams.UpdateDifficultyAdjustmentParameters(modifiedPowTargetSpacing, modifiedPowTargetTimespan);

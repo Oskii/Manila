@@ -224,7 +224,26 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     // Fill in header
     pblock->hashPrevBlock  = pindexPrev->GetBlockHash();
     UpdateTime(pblock, chainparams.GetConsensus(), pindexPrev);
-    pblock->nBits          = GetNextWorkRequired(pindexPrev, pblock, chainparams.GetConsensus());
+
+    /*  ----------  HARDFORK  ----------
+    * 100 instamine blocks to reset the difficulty. After this
+    * the difficulty will change every 3 blocks, every 30 mins
+    * as per chainparams.cpp 
+    * rather than every 84 Minutes, 12 hours
+    */
+
+    //instamine a few blocks to reset difficulty
+    if(nHeight > 11207 && nHeight < 11307)
+    {
+       pblock->nBits = 511705087; 
+    } else {
+       pblock->nBits = GetNextWorkRequired(pindexPrev, pblock, chainparams.GetConsensus());
+    }
+
+    /*
+    * ----------------------------------
+    */
+
     pblock->nNonce         = 0;
     pblocktemplate->vTxSigOpsCost[0] = WITNESS_SCALE_FACTOR * GetLegacySigOpCount(*pblock->vtx[0]);
 
